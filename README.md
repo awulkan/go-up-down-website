@@ -1,4 +1,4 @@
-![Image of the up/down checker website](https://github.com/awulkan/go-up-down-website/updown-checker.png)
+![Image of the up/down checker website](https://github.com/awulkan/go-up-down-website/blob/master/updown-checker.png)
 
 ## Is the site up or down?
 This repo contains a Go web server that hosts a website where you can enter a URL and find out if it's reachable from the server location the website is running at.
