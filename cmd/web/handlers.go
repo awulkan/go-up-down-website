@@ -14,7 +14,7 @@ const (
 	siteReachable   byte = 3
 )
 
-// Specifically handles responses for the index page ("/").
+// Specifically used for responses to the index page ("/").
 type indexPage struct {
 	Status byte
 	Domain string
