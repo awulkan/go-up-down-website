@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Up/Down checker</title>
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+    <link rel="stylesheet" href="/static/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+
+<body>
+    <main class="main-content">
+        <h1 class="title">Is the site up or down?</h1>
+        <form method="post">
+            <div class="form-row">
+
+                <input
+                    class="form-input"
+                    type="text"
+                    minlength="4"
+                    maxlength="300"
+                    name="domain"
+                    placeholder="google.com"
+                    required
+                    {{if .Domain}}
+                    value="{{.Domain}}"
+                    {{end}}>
+                <button
+                    class="form-button"
+                    type="submit">Check</button>
+            </div>
+        </form>
+        {{if .Status }}
+        <div class="response-info">
+            {{ if eq 1 .Status }}
+            Bad request, please enter a valid domain name.
+            {{ else if eq 2 .Status }}
+            The site appears to be down from here as well.
+            {{ else if eq 3 .Status }}
+            The site is reachable from out location, check your network settings.
+            {{end}}
+        </div>
+        {{end}}
+    </main>
+</body>
+
+</html>
